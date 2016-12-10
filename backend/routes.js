@@ -20,7 +20,9 @@ module.exports = function() {
   });
 
   router.post('/trains/data', function(req,res){
-    database.executeQuery("INSERT INTO trains VALUES...", function(results) {
+    var query = "insert into trains (trainNumber, lineColor, inService) values ("+ req.body.trainNumber + ",'" + req.body.lineColor + "'," + req.body.inService +");"
+
+    database.executeQuery(query, function(results) {
       res.send(results);
     });
   });

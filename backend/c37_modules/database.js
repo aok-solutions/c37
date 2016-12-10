@@ -1,7 +1,7 @@
 "use strict";
 
 var pg = require('pg');
-var connectionString = "postgres://ubuntu:icstars@localhost:5432";
+var connectionString = process.env.DATABASE_URL || "postgres://localhost:5432";
 
 module.exports = function() {
   return {

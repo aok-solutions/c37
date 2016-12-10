@@ -12,7 +12,7 @@ $(document).ready(function(){
 		$('#trainData').html(tableHTMLString);
 	});
 
-	$('addATrain').click(function(data){
-		$.post('')
+	$('#addTrain').submit(function(event){
+		$.post('/trains/data', $('#addTrain').serialize());
 	});
 });
